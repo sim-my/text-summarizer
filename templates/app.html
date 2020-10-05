@@ -16,17 +16,49 @@
         <div class="col-6">
           <div class="p-4 text-center">
             <h4 class="text-success">Input Text</h4>
-            <textarea rows='18' class="form-control border border-success" required></textarea>
-            <button class="btn btn-success m-3">Summarize</button>
+            <form id="form">
+              <textarea
+                rows="18"
+                class="form-control border border-success"
+                required
+                name='input_text'
+              ></textarea>
+              <button type="submit" class="btn btn-success m-3">Summarize</button>
+            </form>
           </div>
         </div>
         <div class="col-6">
           <div class="p-4 text-center">
             <h4 class="text-danger">Summarized Text</h4>
-            <textarea rows='18' class="form-control border border-danger" required></textarea>
+            <textarea
+              rows="18"
+              class="form-control border border-danger"
+              required
+            ></textarea>
           </div>
         </div>
       </div>
     </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+        frm = $('#form');
+        frm.submit(function (e){
+            e.preventDefault();
+            $.ajax({
+              type: 'POST',
+              url: "/",
+              data: frm.serialize(),
+              dataType: "text",
+              success: function (data) {
+                console.log('Submission was successful.');
+                console.log(data);
+            },
+            error: function (data) {
+                console.log('An error occurred.');
+                console.log(data);
+            },
+            });
+        });
+    </script>
   </body>
 </html>
