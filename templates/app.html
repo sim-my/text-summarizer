@@ -1,10 +1,32 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>You Rock</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Summarizer</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="p-4 text-center">
+            <h4 class="text-success">Input Text</h4>
+            <textarea rows='18' class="form-control border border-success" required></textarea>
+            <button class="btn btn-success m-3">Summarize</button>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="p-4 text-center">
+            <h4 class="text-danger">Summarized Text</h4>
+            <textarea rows='18' class="form-control border border-danger" required></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
